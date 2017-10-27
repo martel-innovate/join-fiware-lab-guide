@@ -28,5 +28,12 @@ Should you have a solution yourself, feel free to make a pull request!
 
 ## Acknowledgments
 
+<<<<<<< HEAD
+=======
+Should you have a solution your self, feel free to make a pull request!
+
+## Acknowledgments
+
+>>>>>>> initial toc
 This documentation has been developed in the context of the FI-NEXT project
 (Project ID: 732851), funded by the EC in the H2020 framework.
