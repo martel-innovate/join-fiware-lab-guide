@@ -4,7 +4,7 @@ node_js:
 install:
   - npm install -g markdownlint-cli --save-dev
 before_script:
-  - markdownlint
+  - markdownlint .
 script:
   - true  # add other tests here
 
