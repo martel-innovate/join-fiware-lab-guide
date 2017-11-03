@@ -3,7 +3,7 @@ cache: pip
 python:
   - 2.7
 install:
-  - pip install --use-wheel --upgrade --cache-dir .cache/pip Pygments setuptools docutils mock pillow alabaster commonmark recommonmark mkdocs
+  - pip install Pygments setuptools docutils mock pillow alabaster commonmark recommonmark mkdocs
 script:
 # to be uncommented when the initial content committed.
 #  - mkdocs build --clean --site-dir _build/html --theme readthedocs 
