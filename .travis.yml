@@ -1,12 +1,26 @@
-language: nodejs
-node_js:
-  - 8
+language: python
+cache: pip
+python:
+  - 2.7
+  - 3.6
 install:
-  - npm install -g markdownlint-cli --save-dev
-before_script:
-  - markdownlint .
+  - pip install flake8
 script:
-  - true  # add other tests here
+  - mkdocs build --clean --site-dir _build/html --theme readthedocs
+
+matrix:
+  include:
+  ## linters for json and JavaScript files
+    - language: node_js
+      node_js:
+        - 8
+      python:
+      install:
+        - npm install -g markdownlint-cli --save-dev
+      before_script:
+        - markdownlint .
+      script:
+        - true  # add other tests here
 
 notifications:
   on_success: change
