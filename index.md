@@ -1,21 +1,24 @@
 # Welcome to the Guidelines to Join FIWARE Lab
 
+This documentation describes the process to set-up a FIWARE Lab Node
+and to connect it to the FIWARE Lab.
+
 ## Table of Contents
 
-1. [Introduction](introduction.md)
-2. [Setting-up a node](node-set-up)
+* [Introduction](introduction.md)
+* [Setting-up a node](node-set-up)
     1. [Requirements](node-set-up/requirements.md)
     2. [Installation](node-set-up/installation.md)
-3. [Connecting a node](node-connection)
+* [Connecting a node](node-connection)
     1. [Connecting your Node to FIWARE Lab](node-connection/fiware-lab.md)
     2. [Registering your Node in FI-Health](node-connection/fi-health.md)
     3. [Registering your Node in the Infographic](node-connection/infographic.md)
-4. [Disconnecting a node](node-disconnection)
+* [Disconnecting a node](node-disconnection)
     1. [De-Registering your Node to FIWARE Lab](node-disconnection/fiware-lab.md)
     2. [De-Registering your Node in FI-Health](node-disconnection/fi-health.md)
     3. [De-Registering your Node in the Infographic](node-disconnection/infographic.md)
-5. [Operating a node](node-operation)
-6. [Planned future evolutions](future.md)
-7. [Additional Documentation](references.md)
-8. [F.A.Q.](faq.md)
-9. [ToDos](todos.md)
+* [Operating a node](node-operation)
+* [Planned future evolutions](future.md)
+* [Additional Documentation](references.md)
+* [F.A.Q.](faq.md)
+* [ToDos](todos.md)
