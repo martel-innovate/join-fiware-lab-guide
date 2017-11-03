@@ -1,0 +1,23 @@
+site_name: Guidelines to Join FIWARE Lab
+repo_url: https://github.com/martel-innovate/join-fiware-lab-guide.git
+site_description: The official guidelines to connect an OpenStack cloud to FIWARE Lab
+docs_dir: '.'
+theme: readthedocs
+pages:
+  - Introduction: 'introduction.md'
+  - 'Setting-up a node':
+    - 'Requirements': 'node-set-up/requirements.md'
+    - 'Installation': 'node-set-up/installation.md'
+  - 'Connecting a node':
+    - 'Connecting your Node to FIWARE Lab': 'node-connection/fiware-lab.md'
+    - 'Registering your Node in FI-Health': 'node-connection/fi-health.md'
+    - 'Registering your Node in the Infographic': 'node-connection/infographic.md'
+  - 'Disconnecting a node':
+    - 'De-Registering your Node to FIWARE Lab': 'node-disconnection/fiware-lab.md'
+    - 'De-Registering your Node in FI-Health': 'node-disconnection/fi-health.md'
+    - 'De-Registering your Node in the Infographic': 'node-disconnection/infographic.md'
+  - 'Operating a node':
+  - 'Planned future evolutions': 'future.md'
+  - 'Additional Documentation': 'references.md'
+  - 'F.A.Q.': 'faq.md'
+  - 'ToDos': 'todos.md'
