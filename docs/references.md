@@ -1,2 +1,1 @@
-# Additional documentation
-
+# Additional Documentation

@@ -1,1 +1,1 @@
-# Registering your node in the Infographic
+# Registering your Node in the Infographic

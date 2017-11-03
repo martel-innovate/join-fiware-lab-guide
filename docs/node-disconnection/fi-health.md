@@ -1,1 +1,1 @@
-# Deregistering your node in FI-Health
+# De-Registering your Node in FI-Health

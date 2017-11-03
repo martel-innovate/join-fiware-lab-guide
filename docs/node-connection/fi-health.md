@@ -1,1 +1,1 @@
-# Registering your node in FI-Health
+# Registering your Node in FI-Health
