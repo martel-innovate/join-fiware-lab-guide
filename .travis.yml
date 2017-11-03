@@ -5,7 +5,9 @@ python:
 install:
   - pip install --use-wheel --upgrade --cache-dir .cache/pip Pygments setuptools docutils mock pillow alabaster commonmark recommonmark mkdocs
 script:
-  - mkdocs build --clean --site-dir _build/html --theme readthedocs
+# to be uncommented when the initial content committed.
+#  - mkdocs build --clean --site-dir _build/html --theme readthedocs 
+  - true
 
 matrix:
   include:
