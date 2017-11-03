@@ -16,7 +16,7 @@ pages:
         - 'De-Registering your Node to FIWARE Lab': 'node-disconnection/fiware-lab.md'
         - 'De-Registering your Node in FI-Health': 'node-disconnection/fi-health.md'
         - 'De-Registering your Node in the Infographic': 'node-disconnection/infographic.md'
-    - 'Operating a node': 'node-operation'
+    - 'Operating a node': 'node-operation/index.md'
     - 'Planned future evolutions': 'future.md'
     - 'Additional Documentation': 'references.md'
     - 'F.A.Q.': 'faq.md'
