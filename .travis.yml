@@ -2,7 +2,6 @@ language: python
 cache: pip
 python:
   - 2.7
-  - 3.6
 install:
   - pip install --use-wheel --upgrade --cache-dir .cache/pip Pygments setuptools docutils mock pillow alabaster commonmark recommonmark mkdocs
 script:
