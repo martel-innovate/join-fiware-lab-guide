@@ -1,7 +1,7 @@
 site_name: Guidelines to Join FIWARE Lab
 repo_url: https://github.com/martel-innovate/join-fiware-lab-guide.git
 site_description: The official guidelines to connect an OpenStack cloud to FIWARE Lab
-docs_dir: '.'
+docs_dir: 'docs'
 theme: readthedocs
 pages:
     - Introduction: 'introduction.md'
