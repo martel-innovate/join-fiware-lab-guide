@@ -1,3 +1,3 @@
-# Connecting your Node to FIWARE Lab
+# Connecting your node to FIWARE Lab
 
-This section describe how to connect a node to FIWARE Lab
+This section describes how to connect a node to FIWARE Lab
