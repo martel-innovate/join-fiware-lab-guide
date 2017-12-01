@@ -1,1 +1,1 @@
-# De-Registering your Node in the Infographic
+# Deregistering your node in the Infographic
