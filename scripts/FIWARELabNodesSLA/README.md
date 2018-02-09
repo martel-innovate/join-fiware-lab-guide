@@ -63,16 +63,18 @@ a configuration file:
     - -v, --version: if specified, prints the version of this SLA script
 2) configuration file:
 
-```bash
-- [monitoring]
-url = http://130.206.84.4:11027
-- [region]
-id = region-id
-- [sla]
-value = 0.95
-- [all]
-list = ["PiraeusU", "SophiaAntipolis2", "Spain2", "Crete", "Volos", "Lannion4", "Budapest2", "Zurich2", "Brittany", "Vicenza", "Senegal", "Genoa", "Mexico"]
-```
+  ```bash
+  - [monitoring]
+  url = http://130.206.84.4:11027
+  - [region]
+  id = region-id
+  - [sla]
+  value = 0.95
+  - [all]
+  list = ["PiraeusU", "SophiaAntipolis2", "Spain2", "Crete", "Volos", 
+  "Lannion4", "Budapest2", "Zurich2", "Brittany", "Vicenza", "Senegal", 
+  "Genoa", "Mexico"]
+  ```
 
 ## Deployment and run
 
