@@ -1,21 +1,34 @@
-#+TITLE:     FIWARE Lab Nodes SLA
-#+AUTHOR:    Katarzyna Di Meo
-#+DESCRIPTION: Python app for nodes' SLA computing
-#+KEYWORDS:  python, sla, nodes, fiware
-#+LANGUAGE:  en
+Title:       FIWARE Lab Nodes SLA  
+Author:      Katarzyna Di Meo  
+Description: Python app for nodes' SLA computing  
+keywords:    python, sla, nodes, fiware  
+Language:    en  
 
-#+html: <p align="left"><a href="http://www.apache.org/licenses/LICENSE-2.0"><img src="https://camo.githubusercontent.com/651d047a62d409c28b23517069c652af8b8c429c/68747470733a2f2f636f636f61706f642d6261646765732e6865726f6b756170702e636f6d2f6c2f526573744b69742f62616467652e706e67" /></a></p>
+# FIWARE Lab Nodes SLA
 
-* General description
-  The nodes, that are funded by the FI-NEXT project, have to assure a certain level of quality defined through a Service Level Agreement (SLA). One of the conditions that must be satisfied is the services availability on the node that must be above the 95% threshold.\\
+[![License](https://img.shields.io/badge/license-Apache%20License,%20Version%202.0-green.svg)](http://www.apache.org/licenses/LICENSE-2.0)
+
++ [General description](#def-general)
++ [Deployment and run](#def-run)
++ [Additional features](#def-add)
+    - [Specify custom start date](#def-start)
+    - [Specify custom region](#def-region)
+    - [Include week ends](#def-week)
++ [Notes](#def-notes)
+
+---
+
+<a name="def-general"></a>
+## General description
+  The nodes taking part to FIWARE Lab have to assure a certain level of quality defined through a Service Level Agreement (SLA). One of the conditions that must be satisfied is the services availability on the node that must be above the 95% threshold.  
   A set of OpenStack services, called FIWARE Lab node services, runs on each of the FIWARE Lab nodes. The measurement of the availability of those services is managed through the use of the FIWARE Lab monitoring system tool. This FIWARE Lab monitoring system collects all the monitoring measurements from each FIWARE Lab node. These informations are centrally stored, aggregated and available through the FIWARE monitoring API for both real-time raw data and aggregated historical data.
   
-  FIWARE relies on the above pipeline to calculate the FIWARE Lab node overall service availability analysing the uptime status of: 
-     - The OpenStack services (Computing, Networking, Storage and Authentication) using the [[https://github.com/SmartInfrastructures/ceilometer-plugin-fiware#monasca-agent][Monasca agent component installed on each FIWARE Lab node]]
-     - The FIWARE Lab node Sanity Check using [[https://fi-health.lab.fiware.org/][FIWARE Lab Health]]
+  FIWARE Lab Admins rely on the above pipeline to calculate the FIWARE Lab node overall service availability analysing the uptime status of: 
+     - The OpenStack services (Computing, Networking, Storage and Authentication) using the [Monasca agent component installed on each FIWARE Lab node](https://github.com/SmartInfrastructures/ceilometer-plugin-fiware#monasca-agent)
+     - The FIWARE Lab node Sanity Check using [FIWARE Lab Health](https://fi-health.lab.fiware.org/)
   In particular the hourly, daily and monthly averaged uptime of such services is stored in the historical monitoring database as a unique OverallStatus metric. The monthly value should not be lower than 95%, in order to respect the given SLA. 
 
-  This Python application is used to compute the averaged uptime of the services of each region by calling the API [[https://federationmonitoring.docs.apiary.io/#reference/service/services4region][Services4Region]] of the FIWARE monitoring APIs.
+  This Python application is used to compute the averaged uptime of the services of each region by calling the API [Services4Region](https://federationmonitoring.docs.apiary.io/#reference/service/services4region) of the FIWARE monitoring APIs.
 
   The application can be run by each node by setting some optional arguments and a configuration file:
   1) optional arguments:
@@ -27,6 +40,7 @@
      - -l, --log: if specified, prints the averaged uptime of the services for each day
      - -v, --version: if specified, prints the version of this SLA script
   2) configuration file:
+  ```
      - [monitoring]
        url = http://130.206.84.4:11027
      - [region]
@@ -34,41 +48,46 @@
      - [sla]
        value = 0.95
      - [all]
-       list = ["PiraeusU", "SophiaAntipolis2", "Spain2", "Crete", "Volos", "Lannion3", "Budapest2", "Zurich2", "SpainTenerife", "Vicenza", "Hannover", "Genoa", "Mexico"]
+       list = ["PiraeusU", "SophiaAntipolis2", "Spain2", "Crete", "Volos", "Lannion4", "Budapest2", "Zurich2", "Brittany", "Vicenza", "Senegal", "Genoa", "Mexico"]
+```
 
-* Deployment and run
+<a name="def-run"></a>
+## Deployment and run
   The application is intended to be run both by each single region and centrally by an admin for all the regions.
 
-** Deployment & run
     1) Create a virtualenv
-       #+BEGIN_EXAMPLE
+```
        mkvirtualenv computingSLA
-       #+END_EXAMPLE
+```
     2) Install the dependencies
-       #+BEGIN_EXAMPLE
+```
        pip install -r requirements.txt
-       #+END_EXAMPLE
+```
     3) Run the script in the virtualenv
-       #+BEGIN_EXAMPLE
+```
        python slaComputing.py
-       #+END_EXAMPLE
+```
 
-* Additional features
-** Specify custom start date
+<a name="def-add"></a>
+## Additional features
+<a name="def-start"></a>
+### Specify custom start date
    It is possible to specify a custom start date if you do not need the services' averaged uptime of the last month (default behaviour). 
 
-   This can be done using =--start-day, -s= as argument to the command line. Expected date format is =2017-01-01=.
-   
-** Specify custom region
+   This can be done using `--start-day, -s` as argument to the command line. Expected date format is `2017-01-01`.
+
+<a name="def-region"></a>
+### Specify custom region
    It is possible to specify a custom single region (or all regions) on which to elaborate data. 
 
-   This can be done using =--region-id, -r= as argument to the command line. Expected region-id could be the region-id or the "ALL" keyword.
-   
-** Include week ends
+   This can be done using `--region-id, -r` as argument to the command line. Expected region-id could be the region-id or the "ALL" keyword.
+
+<a name="def-week"></a>
+### Include week ends
    It is possible to *include* the weekends in the computation.
 
-   This can be done using =--weekend, -w= as argument to the command line.
-   
-* Notes
-  The script does not consider the "unknown data" for a specific node, if this one is less than 33%. Otherwise the averaged uptime of the services cannot be computed.\\
-  Besides the new version of Monasca is not stable, so current data needed for the script cannot be collected. The SLA can be computed for the time from the beginning of the project till we had data (end of July). When Monasca will be up and running againg, the script will operate on monthly bases (without the need of specifying any start date).
+   This can be done using `--weekend, -w` as argument to the command line.
+
+<a name="def-notes"></a>
+## Notes
+  The script does not consider the "unknown data" for a specific node, if this one is less than 33%.
