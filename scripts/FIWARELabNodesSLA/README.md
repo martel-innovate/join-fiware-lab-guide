@@ -48,54 +48,54 @@ of the FIWARE monitoring APIs.
 The application can be run by each node by setting some optional arguments and 
 a configuration file:
 
-1) optional arguments:
+1. optional arguments:
 
-    - -h, --help: shows the help message and exit
-    - -c CONFIG_FILE, --config-file CONFIG_FILE: sets a configuration file 
+    - `-h`, `--help`: shows the help message and exit
+    - `-c CONFIG_FILE`, `--config-file CONFIG_FILE`: sets a configuration file 
       different from the default one
-    - -s START_DAY, --start-day START_DAY: sets the start date of the 
+    - `-s START_DAY`, `--start-day START_DAY`: sets the start date of the 
       computation (must be before the 2017-07-27). If not set, the 
       previous month is considered.
-    - -r REGION_ID, --region-id REGION_ID: sets the region to analyse. Setting 
+    - `-r REGION_ID`, `--region-id REGION_ID`: sets the region to analyse. Setting 
       "ALL", all regions will be analysed
-    - -w, --weekend: if specified, the week ends will be considered
-    - -l, --log: if specified, prints the averaged uptime of the services for 
+    - `-w`, `--weekend`: if specified, the week ends will be considered
+    - `-l`, `--log`: if specified, prints the averaged uptime of the services for 
       each day
-    - -v, --version: if specified, prints the version of this SLA script
+    - `-v`, `--version`: if specified, prints the version of this SLA script
     
-2) configuration file:
+2. configuration file:
 
-  ```bash
-  - [monitoring]
-  url = http://130.206.84.4:11027
-  - [region]
-  id = region-id
-  - [sla]
-  value = 0.95
-  - [all]
-  list = ["PiraeusU", "SophiaAntipolis2", "Spain2", "Crete", "Volos", 
-  "Lannion4", "Budapest2", "Zurich2", "Brittany", "Vicenza", "Senegal", 
-  "Genoa", "Mexico"]
-  ```
+    ```bash
+    - [monitoring]
+    url = http://130.206.84.4:11027
+    - [region]
+    id = region-id
+    - [sla]
+    value = 0.95
+    - [all]
+    list = ["PiraeusU", "SophiaAntipolis2", "Spain2", "Crete", "Volos", 
+    "Lannion4", "Budapest2", "Zurich2", "Brittany", "Vicenza", "Senegal", 
+    "Genoa", "Mexico"]
+    ```
 
 ## Deployment and run
 
 The application is intended to be run both by each single region and centrally 
 by an admin for all the regions.
 
-1) Create a virtualenv
+1. Create a virtualenv
 
    ```bash
    mkvirtualenv computingSLA
    ```
 
-2) Install the dependencies
+2. Install the dependencies
 
    ```bash
    pip install -r requirements.txt
    ```
 
-3) Run the script in the virtualenv
+3. Run the script in the virtualenv
 
    ```bash
    python fiware_lab_nodes_sla.py
