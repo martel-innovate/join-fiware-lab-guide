@@ -81,19 +81,21 @@ by an admin for all the regions.
 
 1) Create a virtualenv
 
-```bash
-mkvirtualenv computingSLA
-```
+   ```bash
+   mkvirtualenv computingSLA
+   ```
+
 2) Install the dependencies
 
-```bash
-pip install -r requirements.txt
-```
+   ```bash
+   pip install -r requirements.txt
+   ```
+
 3) Run the script in the virtualenv
 
-```bash
-python slaComputing.py
-```
+   ```bash
+   python slaComputing.py
+   ```
 
 ## Additional features
 
