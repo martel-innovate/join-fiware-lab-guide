@@ -49,6 +49,7 @@ The application can be run by each node by setting some optional arguments and
 a configuration file:
 
 1) optional arguments:
+
     - -h, --help: shows the help message and exit
     - -c CONFIG_FILE, --config-file CONFIG_FILE: sets a configuration file 
       different from the default one
@@ -61,6 +62,7 @@ a configuration file:
     - -l, --log: if specified, prints the averaged uptime of the services for 
       each day
     - -v, --version: if specified, prints the version of this SLA script
+    
 2) configuration file:
 
   ```bash
