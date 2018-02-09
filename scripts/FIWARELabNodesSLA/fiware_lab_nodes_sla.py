@@ -101,7 +101,7 @@ def main():
     script_version = "1.0.0"
     
     global undef_percentage
-    undef_percentage = 33
+    undef_percentage = 5
     
     # Loads and manages the input arguments
     args = arg_parser()
@@ -155,8 +155,10 @@ def main():
             sys.stdout.write("The start date is not valid. Please use the format '2017-06-27'")
             sys.exit(-1)
         
-        end_string = "2017-07-27"        
-        end_date = datetime.datetime.strptime(end_string,"%Y-%m-%d")
+        #end_string = "2017-07-27"  
+        end_date = datetime.datetime.now() - relativedelta(days=1)
+        end_string = (end_date).strftime("%Y-%m-%d")
+        #end_date = datetime.datetime.strptime(end_string,"%Y-%m-%d")
         
         if start_date >= end_date:
             sys.stdout.write("The start date is not valid. Please specify an older date")
