@@ -98,7 +98,7 @@ by an admin for all the regions.
 3) Run the script in the virtualenv
 
    ```bash
-   python slaComputing.py
+   python fiware_lab_nodes_sla.py
    ```
 
 ## Additional features
@@ -128,4 +128,4 @@ This can be done using `--weekend, -w` as argument to the command line.
 ## Notes
 
 The script does not consider the "unknown data" for a specific node, if this 
-one is less than 33%.
+one is less than 5%.
