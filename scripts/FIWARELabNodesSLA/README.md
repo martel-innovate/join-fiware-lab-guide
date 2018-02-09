@@ -15,9 +15,9 @@
 ## General description
 
 The nodes taking part to FIWARE Lab have to assure a certain level of quality 
-defined through a Service Level Agreement (SLA). One of the conditions that must 
-be satisfied is the services availability on the node that must be above the 95% 
-threshold.  
+defined through a Service Level Agreement (SLA). One of the conditions that 
+must be satisfied is the services availability on the node that must be above 
+the 95% threshold.  
 A set of OpenStack services, called FIWARE Lab node services, runs on each of 
 the FIWARE Lab nodes. The measurement of the availability of those services is 
 managed through the use of the FIWARE Lab monitoring system tool. This FIWARE 
@@ -45,14 +45,14 @@ of each region by calling the API
 [Services4Region](https://federationmonitoring.docs.apiary.io/#reference/service/services4region)
 of the FIWARE monitoring APIs.
 
-The application can be run by each node by setting some optional arguments and a 
-configuration file:
+The application can be run by each node by setting some optional arguments and 
+a configuration file:
 
 1) optional arguments:
 
 - -h, --help: shows the help message and exit
-- -c CONFIG_FILE, --config-file CONFIG_FILE: sets a configuration file different 
-  from the default one
+- -c CONFIG_FILE, --config-file CONFIG_FILE: sets a configuration file 
+  different from the default one
 - -s START_DAY, --start-day START_DAY: sets the start date of the computation 
   (must be before the 2017-07-27). If not set, the previous month is considered.
 - -r REGION_ID, --region-id REGION_ID: sets the region to analyse. Setting 
@@ -61,7 +61,6 @@ configuration file:
 - -l, --log: if specified, prints the averaged uptime of the services for each 
   day
 - -v, --version: if specified, prints the version of this SLA script
-
 2) configuration file:
 
 ```bash
@@ -85,13 +84,11 @@ by an admin for all the regions.
 ```bash
 mkvirtualenv computingSLA
 ```
-
 2) Install the dependencies
 
 ```bash
 pip install -r requirements.txt
 ```
-
 3) Run the script in the virtualenv
 
 ```bash
@@ -124,5 +121,5 @@ This can be done using `--weekend, -w` as argument to the command line.
 
 ## Notes
 
-The script does not consider the "unknown data" for a specific node, if this one 
-is less than 33%.
+The script does not consider the "unknown data" for a specific node, if this 
+one is less than 33%.
