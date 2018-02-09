@@ -56,11 +56,11 @@ a configuration file:
     - `-s START_DAY`, `--start-day START_DAY`: sets the start date of the 
       computation (must be before the 2017-07-27). If not set, the 
       previous month is considered.
-    - `-r REGION_ID`, `--region-id REGION_ID`: sets the region to analyse. Setting 
-      "ALL", all regions will be analysed
+    - `-r REGION_ID`, `--region-id REGION_ID`: sets the region to analyse. 
+      Setting "ALL", all regions will be analysed
     - `-w`, `--weekend`: if specified, the week ends will be considered
-    - `-l`, `--log`: if specified, prints the averaged uptime of the services for 
-      each day
+    - `-l`, `--log`: if specified, prints the averaged uptime of the services 
+      for each day
     - `-v`, `--version`: if specified, prints the version of this SLA script
     
 2. configuration file:
