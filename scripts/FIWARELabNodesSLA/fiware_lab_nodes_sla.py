@@ -189,7 +189,7 @@ def main():
         sys.stdout.write("# The regions are: " + ", ".join(regions) + "\n")
     else:
         regions = [args.region_id]
-        sys.stdout.write("# The region is: " + region_id[0] + "\n")
+        sys.stdout.write("# The region is: " + regions[0] + "\n")
         
     # Get sla parameter to work with
     try:
