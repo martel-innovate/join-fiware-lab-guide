@@ -45,15 +45,13 @@ class spinnerThread (threading.Thread):
 
 def computeSLAfromJson(region, json_data, end_date, weekend, sla, args):
     tot_counter = 0
-    overall_sum = 0
+    fihealth_sum = 0.
     
     undef_tot_number = 0
-    undef_days = 0
     
-    #loop over json returned to check OverallStatus->value_clean and FiHealthStatus->value_clean
+    #loop over json returned to check FiHealthStatus->value_clean
     for item in sorted(json_data['measures'], key=lambda x : x["timestamp"]):
     #for item in json_data['measures']:
-        overall_value = item['OverallStatus']['value_clean']
         fihealth_value = item['FiHealthStatus']['value_clean']
         
         timestamp = item['timestamp']            
@@ -64,25 +62,15 @@ def computeSLAfromJson(region, json_data, end_date, weekend, sla, args):
                 tot_counter += 1
                 
                 value_to_print = "undefined"
-                if overall_value != "undefined" or fihealth_value != "undefined":
-                    value_to_add = 0.                    
-                    if overall_value == "undefined" and fihealth_value != "undefined":
-                        undef_tot_number += 1
-                        value_to_add = fihealth_value
-                    elif overall_value != "undefined" and fihealth_value == "undefined":
-                        undef_tot_number += 1
-                        value_to_add = overall_value
-                    else:
-                        value_to_add = ( float(fihealth_value) + float(overall_value) ) / 2
-                            
-                    overall_sum += float(value_to_add)
-                    value_to_print = float(value_to_add)
+                if fihealth_value != "undefined":
+                    value_to_add = float(fihealth_value)                        
+                    fihealth_sum += value_to_add
+                    value_to_print = value_to_add
                 else:
-                    undef_tot_number += 2
-                    undef_days += 1
+                    undef_tot_number += 1
                     
                 if args.log:
-                    sys.stdout.write(timestamp+": "+ str(value_to_print) + " (OverallStatus:"+str(overall_value)+";FiHealthStatus:"+str(fihealth_value)+")" + "\n")
+                    sys.stdout.write(timestamp+": "+ str(value_to_print) + "\n")
             else:
                 if args.log:
                     sys.stdout.write(timestamp+": "+"not considered\n")
@@ -94,16 +82,21 @@ def computeSLAfromJson(region, json_data, end_date, weekend, sla, args):
     
     if tot_counter>0:
         
-        if (tot_counter - undef_days) > 0:
-            avg_percentage = overall_sum/(tot_counter - undef_days)
+        if (tot_counter - undef_tot_number) > 0:
+            avg_percentage = fihealth_sum/(tot_counter - undef_tot_number)
             
         sla_value = str(round(avg_percentage*100,2))+"%"
                 
         if undef_tot_number > (tot_counter*undef_percentage/100):
             
-            sys.stdout.write("The SLA for "+region+" is not respected: too many undefined ( > "+str(undef_percentage)+"% ) "+str(undef_tot_number)+"/"+str(tot_counter*2)+" ( partial SLA value: "+sla_value+" )"+"\n")
+            sys.stdout.write("The SLA for "+region+" is not respected: too many undefined ( > "+str(undef_percentage)+"% ) "+str(undef_tot_number)+"/"+str(tot_counter)+" ( partial SLA value: "+sla_value+" )"+"\n")
             sys.stdout.flush()
             return
+        
+    else:
+        sys.stdout.write("The SLA for "+region+" cannot be computed"+"\n")
+        sys.stdout.flush()
+        return
     
     if avg_percentage >= sla:
         sys.stdout.write("The SLA for "+region+" is respected: "+sla_value+"\n")

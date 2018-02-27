@@ -36,12 +36,12 @@ overall service availability analysing the uptime status of:
   Health](https://fi-health.lab.fiware.org/)
 
 In particular the hourly, daily and monthly averaged uptime of such services is 
-stored in the historical monitoring database as a unique OverallStatus metric. 
-The monthly value should not be lower than 95%, in order to respect the given 
-SLA. 
+stored in the historical monitoring database. 
+The monthly FiHealthStatus value should not be lower than 95%, in order to 
+respect the given SLA. 
 
-This Python application is used to compute the averaged uptime of the services 
-of each region by calling the API 
+This Python application is used to compute the averaged uptime of the sanity 
+service of each region by calling the API 
 [Services4Region](https://federationmonitoring.docs.apiary.io/#reference/service/services4region)
 of the FIWARE monitoring APIs.
 
@@ -75,7 +75,7 @@ a configuration file:
     - [all]
     list = ["PiraeusU", "SophiaAntipolis2", "Spain2", "Crete", "Volos", 
     "Lannion4", "Budapest2", "Zurich2", "Brittany", "Vicenza", "Senegal", 
-    "Genoa", "Mexico"]
+    "Genoa", "Mexico", "Wroclaw", "Poznan", "SaoPaulo"]
     ```
 
 ## Deployment and run
@@ -105,8 +105,8 @@ by an admin for all the regions.
 
 ### Specify custom start date
 
-It is possible to specify a custom start date if you do not need the services' 
-averaged uptime of the last month (default behaviour). 
+It is possible to specify a custom start date if you do not need the sanity 
+service averaged uptime of the last month (default behaviour). 
 
 This can be done using `--start-day, -s` as argument to the command line. 
 Expected date format is `2017-01-01`.
@@ -128,4 +128,4 @@ This can be done using `--weekend, -w` as argument to the command line.
 ## Notes
 
 The script does not consider the "unknown data" for a specific node, if this 
-one is less than 5%.
+one is less than 10%.
