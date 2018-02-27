@@ -48,47 +48,62 @@ def computeSLAfromJson(region, json_data, end_date, weekend, sla, args):
     overall_sum = 0
     
     undef_tot_number = 0
+    undef_days = 0
     
-    #loop over json returned to check OverallStatus->value_clean
-    for item in json_data['measures']:
+    #loop over json returned to check OverallStatus->value_clean and FiHealthStatus->value_clean
+    for item in sorted(json_data['measures'], key=lambda x : x["timestamp"]):
+    #for item in json_data['measures']:
         overall_value = item['OverallStatus']['value_clean']
+        fihealth_value = item['FiHealthStatus']['value_clean']
+        
         timestamp = item['timestamp']            
         timestamp_date = datetime.datetime.strptime(timestamp, "%Y-%m-%dT%H:%M:%S")
         if timestamp_date <= end_date:
-            tot_counter += 1
-            if overall_value != "undefined":
-                overall_sum += overall_value
-            else:
-                undef_tot_number += 1
-            if args.log:
-                sys.stdout.write(timestamp+": "+ str(overall_value) + "\n")
-            if not weekend:
-                timestamp_weekday = timestamp_date.weekday()
-                if timestamp_weekday == 5 or timestamp_weekday == 6:
-                    tot_counter -= 1
-                    if overall_value != "undefined":
-                        overall_sum -= overall_value
+            timestamp_weekday = timestamp_date.weekday()
+            if(weekend or (timestamp_weekday != 5 and timestamp_weekday != 6)):
+                tot_counter += 1
+                
+                value_to_print = "undefined"
+                if overall_value != "undefined" or fihealth_value != "undefined":
+                    value_to_add = 0.                    
+                    if overall_value == "undefined" and fihealth_value != "undefined":
+                        undef_tot_number += 1
+                        value_to_add = fihealth_value
+                    elif overall_value != "undefined" and fihealth_value == "undefined":
+                        undef_tot_number += 1
+                        value_to_add = overall_value
                     else:
-                        undef_tot_number -= 1
-                    if args.log:
-                        sys.stdout.write("not considered\n")
+                        value_to_add = ( float(fihealth_value) + float(overall_value) ) / 2
+                            
+                    overall_sum += float(value_to_add)
+                    value_to_print = float(value_to_add)
+                else:
+                    undef_tot_number += 2
+                    undef_days += 1
+                    
                 if args.log:
-                    sys.stdout.write(str(timestamp_weekday) + "\n")
+                    sys.stdout.write(timestamp+": "+ str(value_to_print) + " (OverallStatus:"+str(overall_value)+";FiHealthStatus:"+str(fihealth_value)+")" + "\n")
+            else:
+                if args.log:
+                    sys.stdout.write(timestamp+": "+"not considered\n")
             if args.log:
+                sys.stdout.write("Day of the week: "+str(timestamp_weekday) + "\n")
                 sys.stdout.write("-------------\n")
 
     avg_percentage = 0
     
     if tot_counter>0:
-        if undef_tot_number <= (tot_counter*undef_percentage/100):
-            if (tot_counter - undef_tot_number) > 0:
-                avg_percentage = overall_sum/(tot_counter - undef_tot_number)
-        else:
-            sys.stdout.write("The SLA for "+region+" is not respected: too many undefined (> "+str(undef_percentage)+"%) "+str(undef_tot_number)+"/"+str(tot_counter)+"\n")
+        
+        if (tot_counter - undef_days) > 0:
+            avg_percentage = overall_sum/(tot_counter - undef_days)
+            
+        sla_value = str(round(avg_percentage*100,2))+"%"
+                
+        if undef_tot_number > (tot_counter*undef_percentage/100):
+            
+            sys.stdout.write("The SLA for "+region+" is not respected: too many undefined ( > "+str(undef_percentage)+"% ) "+str(undef_tot_number)+"/"+str(tot_counter*2)+" ( partial SLA value: "+sla_value+" )"+"\n")
             sys.stdout.flush()
             return
-        
-    sla_value = str(round(avg_percentage*100,2))+"%\n"
     
     if avg_percentage >= sla:
         sys.stdout.write("The SLA for "+region+" is respected: "+sla_value+"\n")
@@ -98,10 +113,10 @@ def computeSLAfromJson(region, json_data, end_date, weekend, sla, args):
 def main():
     
     global script_version
-    script_version = "1.0.0"
+    script_version = "2.0.0"
     
     global undef_percentage
-    undef_percentage = 5
+    undef_percentage = 10
     
     # Loads and manages the input arguments
     args = arg_parser()
