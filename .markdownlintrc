@@ -15,6 +15,7 @@
     "punctuation": ".,;:!"
   },
   "MD002": false,
+  "MD041": false,
   "MD042": false,
   "MD013": false
 }
