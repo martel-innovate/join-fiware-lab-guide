@@ -5,6 +5,7 @@ and connect it to the FIWARE Lab.
 
 ## Table of Contents
 
+
 1. [Essential things to know before joining FIWARE Lab](1.essentials/1.introduction.md)
     - [Requirements](1.essentials/2.requirements.md)
     - [Steps to become a New FIWARE Lab node](1.essentials/3.steps_join.md)
