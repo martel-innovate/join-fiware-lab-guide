@@ -37,4 +37,6 @@ and connect it to the FIWARE Lab.
 1. Management operations on a FIWARE Lab node
     - [Account Management](5.management/1.account.md)
     - [Base-images Management](5.management/2.base-image.md)
-  
+1. [Overview of FIWARE Lab node coordination and support](6.coordination/1.introduction.md)
+    - [Coordination and support procedures](6.coordination/2.procedures.md)
+    - [FIWARE Lab Statistics](6.coordination/3.statistics.md)
