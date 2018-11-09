@@ -14,3 +14,10 @@ and connect it to the FIWARE Lab.
     - [Privacy Policy](2.policies/1.privacy.md)
     - [Cookies policy](2.policies/2.cookies.md)
     - [Terms & Conditions](2.policies/3.terms.md)
+1. Process for joining FIWARE Lab
+    - [OpenStack Services Required](3.process/1.services.md)
+    - [OpenStack upgrade version policy in FIWARE Lab](3.process/2.upgrade.md)
+    - [Installing FIWARE Lab Node](3.process/3.installing.md)
+    - [Configuring FIWARE Lab Node](3.process/4.configuring.md)
+    - [Check the Status of OpenStack services](3.process/5.statuscheck.md)
+    - [Testing FIWARE Lab Node locally](3.process/6.testing.md)
