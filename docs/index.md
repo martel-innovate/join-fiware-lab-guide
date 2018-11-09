@@ -33,3 +33,7 @@ and connect it to the FIWARE Lab.
     - [Mastermind](4.operation/6.mastermind.md)
     - [JIRA](4.operation/7.jira.md)
     - [Backlog](4.operation/8.backlog.md)
+1. Management operations on a FIWARE Lab node
+    - [Account Management](5.management/1.account.md)
+    - [Base-images Management](5.management/2.base-image.md)
+  
