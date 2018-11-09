@@ -35,6 +35,9 @@ pages:
       - 'Mastermind': '4.operation/6.mastermind.md'
       - 'JIRA': '4.operation/7.jira.md'
       - 'Backlog': '4.operation/8.backlog.md'
+    - 'Management operations on a FIWARE Lab node':
+      - 'Account Management': '5.management/1.account.md'
+      - 'Base-images Management': '5.management/2.base-image.md'
 
 
 markdown_extensions: [toc,fenced_code]
