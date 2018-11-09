@@ -6,23 +6,12 @@ docs_dir: 'docs'
 theme: readthedocs
 pages:
     - Home: 'index.md'
-    - Introduction: 'introduction.md'
-    - Setting-up a node:
-        - 'Requirements': 'node-set-up/requirements.md'
-        - 'Installation': 'node-set-up/installation.md'
-    - Connecting a node:
-        - 'Connecting your Node to FIWARE Lab': 'node-connection/fiware-lab.md'
-        - 'Registering your Node in FI-Health': 'node-connection/fi-health.md'
-        - 'Registering your Node in the Infographic': 'node-connection/infographic.md'
-    - Disconnecting a node:
-        - 'De-Registering your Node to FIWARE Lab': 'node-disconnection/fiware-lab.md'
-        - 'De-Registering your Node in FI-Health': 'node-disconnection/fi-health.md'
-        - 'De-Registering your Node in the Infographic': 'node-disconnection/infographic.md'
-    - 'Operating a node': 'node-operation/index.md'
-    - 'Planned future evolutions': 'future.md'
-    - 'Additional Documentation': 'references.md'
-    - 'F.A.Q.': 'faq.md'
-    - 'ToDos': 'todos.md'
+    - 'Essential things to know before joining FIWARE Lab':
+      - 'Introduction': '1.essentials/1.introduction.md'
+      - 'Requirements': '1.essentials/2.requirements.md'
+      - 'Steps to become a New FIWARE Lab node': '1.essentials/3.steps_join.md'
+      - 'Steps to discontinue a FIWARE Lab node': '1.essentials/4.steps_leave.md'
+      - 'Steps to show the current status of your FIWARE Lab node': '1.essentials/5.steps_status.md'
 
 markdown_extensions: [toc,fenced_code]
 extra_css: ["https://fiware.org/style/fiware_readthedocs.css"]

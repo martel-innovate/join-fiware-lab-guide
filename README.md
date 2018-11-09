@@ -8,7 +8,7 @@ offering free resources to [FIWARE](https://www.fiware.org) developers.
 
 Documentation is tagged according to FIWARE Lab release plan.
 
-## Contributions
+## Contributions
 
 Contributions to the documentation are welcome in the form of pull requests.
 
