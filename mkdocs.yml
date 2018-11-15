@@ -28,6 +28,5 @@ pages:
       - 'Registering your Node in the Infographics': '3.process/9.infographics.md'
       - 'Registering your Node in Deep Log Inspection': '3.process/10.log.md'
 
-
 markdown_extensions: [toc,fenced_code]
 extra_css: ["https://fiware.org/style/fiware_readthedocs.css"]
