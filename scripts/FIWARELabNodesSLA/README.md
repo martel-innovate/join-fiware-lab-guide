@@ -3,6 +3,7 @@
 [![License](https://img.shields.io/badge/license-Apache%20License,%20Version%202.0-green.svg)](http://www.apache.org/licenses/LICENSE-2.0)
 
 - [General description](#general-description)
+- [Requirements](#Requirements)
 - [Deployment and run](#deployment-and-run)
 - [Additional features](#additional-features)
     - [Specify custom start date](#specify-custom-start-date)
@@ -55,7 +56,7 @@ a configuration file:
       different from the default one
     - `-s START_DAY`, `--start-day START_DAY`: sets the start date of the 
       computation (must be before the 2017-07-27). If not set, the 
-      previous month is considered.
+      previous month is considered
     - `-r REGION_ID`, `--region-id REGION_ID`: sets the region to analyse. 
       Setting "ALL", all regions will be analysed
     - `-w`, `--weekend`: if specified, the week ends will be considered
@@ -78,15 +79,24 @@ a configuration file:
     "Genoa", "Mexico", "Wroclaw", "Poznan", "SaoPaulo"]
     ```
 
+## Requirements
+
+The following software must be installed:
+
+- Python 3.7
+- pip
+- virtualenv
+
 ## Deployment and run
 
 The application is intended to be run both by each single region and centrally 
 by an admin for all the regions.
 
-1. Create a virtualenv
+1. Create a virtualenv and activate it
 
    ```bash
-   mkvirtualenv computingSLA
+   virtualenv -ppython3.7 computingSLA
+   source ./computingSLA/bin/activate
    ```
 
 2. Install the dependencies
