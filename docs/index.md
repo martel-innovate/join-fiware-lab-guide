@@ -32,4 +32,3 @@ and connect it to the FIWARE Lab.
     - [Rancher](4.operation/5.rancher.md)
     - [Mastermind](4.operation/6.mastermind.md)
     - [JIRA](4.operation/7.jira.md)
-    - [Backlog](4.operation/8.backlog.md)
