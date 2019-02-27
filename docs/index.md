@@ -34,6 +34,6 @@ and connect it to the FIWARE Lab.
     - [JIRA](4.operation/7.jira.md)
     - [Backlog](4.operation/8.backlog.md)
 1. Management operations on a FIWARE Lab node
-    - [Account Management](5.management/1.account.md)
-    - [Base-images Management](5.management/2.base-image.md)
-  
+    - [Introduction](5.management/1.introduction.md)
+    - [Account Management](5.management/2.account.md)
+    - [Base-images Management](5.management/3.base-image.md)
