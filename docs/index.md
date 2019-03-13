@@ -32,3 +32,6 @@ and connect it to the FIWARE Lab.
     - [Rancher](4.operation/5.rancher.md)
     - [Mastermind](4.operation/6.mastermind.md)
     - [JIRA](4.operation/7.jira.md)
+1. [Management operations on a FIWARE Lab node](5.management/1.introduction.md)
+    - [Account](5.management/2.account.md)
+    - [Base Image](5.management/3.base-image.md)
