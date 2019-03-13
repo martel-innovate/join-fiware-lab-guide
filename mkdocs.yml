@@ -35,13 +35,9 @@ pages:
       - 'Mastermind': '4.operation/6.mastermind.md'
       - 'JIRA': '4.operation/7.jira.md'
     - 'Management operations on a FIWARE Lab node':
-      - 'Account Management': '5.management/1.account.md'
-      - 'Base-images Management': '5.management/2.base-image.md'
-    - 'Overview of FIWARE Lab node coordination and support':
-      - 'Introduction': '6.coordination/1.introduction.md'
-      - 'Coordination and support procedures': '6.coordination/2.procedures.md'
-      - 'FIWARE Lab Statistics': '6.coordination/3.statistics.md'
-
+      - 'Introduction': '5.management/1.introduction.md'
+      - 'Account': '5.management/2.account.md'
+      - 'Base Image': '5.management/3.base-image.md'
 
 markdown_extensions: [toc,fenced_code]
 extra_css: ["https://fiware.org/style/fiware_readthedocs.css"]

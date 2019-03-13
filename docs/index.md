@@ -5,7 +5,6 @@ and connect it to the FIWARE Lab.
 
 ## Table of Contents
 
-
 1. [Essential things to know before joining FIWARE Lab](1.essentials/1.introduction.md)
     - [Requirements](1.essentials/2.requirements.md)
     - [Steps to become a New FIWARE Lab node](1.essentials/3.steps_join.md)
@@ -33,9 +32,6 @@ and connect it to the FIWARE Lab.
     - [Rancher](4.operation/5.rancher.md)
     - [Mastermind](4.operation/6.mastermind.md)
     - [JIRA](4.operation/7.jira.md)
-1. Management operations on a FIWARE Lab node
-    - [Management operations on a FIWARE Lab node](5.management/1.introduction.md)
-    - [Base-images Management](5.management/2.base-image.md)
-1. [Overview of FIWARE Lab node coordination and support](6.coordination/1.introduction.md)
-    - [Coordination and support procedures](6.coordination/2.procedures.md)
-    - [FIWARE Lab Statistics](6.coordination/3.statistics.md)
+1. [Management operations on a FIWARE Lab node](5.management/1.introduction.md)
+    - [Account](5.management/2.account.md)
+    - [Base Image](5.management/3.base-image.md)
