@@ -38,3 +38,8 @@ and connect it to the FIWARE Lab.
 1. [Coordination](6.coordination/1.introduction.md)
     - [Procedures](6.coordination/2.procedures.md)
     - [Statistics](6.coordination/3.statistics.md)
+1. [Service Level Agreement](7.sla/1.introduction.md)
+    - [Definition of SLA](7.sla/2.sla.md)
+    - [Procedure to monitor SLA](7.sla/3.monitor.md)
+    - [Procedure to inform failure in SLA](7.sla/4.failure.md)
+    - [Procedure to stop a FIWARE Lab node due to SLA failures](7.sla/5.stop.md)
