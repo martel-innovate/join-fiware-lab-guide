@@ -33,6 +33,7 @@ pages:
       - 'Introduction': '4.operation/1.introduction.md'
       - 'Deep Log Inspection': '4.operation/2.deep-log.md'
       - 'FI-Health': '4.operation/3.fi-health.md'
+      - 'Infographgics': '4.operation/4.infographics.md'
       - 'Rancher': '4.operation/5.rancher.md'
       - 'Mastermind': '4.operation/6.mastermind.md'
       - 'JIRA': '4.operation/7.jira.md'
