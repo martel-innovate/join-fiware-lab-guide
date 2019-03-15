@@ -2,5 +2,8 @@ _build
 .cache
 .git
 
-#IDE
+# IDE
 .idea
+
+# Python virtual environment
+scripts/*/env

@@ -33,6 +33,7 @@ pages:
       - 'Introduction': '4.operation/1.introduction.md'
       - 'Deep Log Inspection': '4.operation/2.deep-log.md'
       - 'FI-Health': '4.operation/3.fi-health.md'
+      - 'Infographgics': '4.operation/4.infographics.md'
       - 'Rancher': '4.operation/5.rancher.md'
       - 'Mastermind': '4.operation/6.mastermind.md'
       - 'JIRA': '4.operation/7.jira.md'
@@ -44,6 +45,12 @@ pages:
       - 'Introduction': '6.coordination/1.introduction.md'
       - 'Procedures': '6.coordination/2.procedures.md'
       - 'Statistics': '6.coordination/3.statistics.md'
+    - 'Service Level Agreement':
+      - 'Introduction': '7.sla/1.introduction.md'
+      - 'Definition of SLA': '7.sla/2.sla.md'
+      - 'Procedure to monitor SLA': '7.sla/3.monitor.md'
+      - 'Procedure to inform failure in SLA': '7.sla/4.failure.md'
+      - 'Procedure to stop a FIWARE Lab node due to SLA failures': '7.sla/5.stop.md'
 
 markdown_extensions: [toc,fenced_code]
-extra_css: ["https://fiware.org/style/fiware_readthedocs.css"]
+extra_css: ["https://fiware.org/style/fiware_readthedocs.css", "https://fiware.org/style/fiware_readthedocs_operations.css"]
