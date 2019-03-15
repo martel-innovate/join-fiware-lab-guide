@@ -39,7 +39,7 @@ pages:
       - 'JIRA': '4.operation/7.jira.md'
     - 'Management operations on a FIWARE Lab node':
       - 'Introduction': '5.management/1.introduction.md'
-      - 'Account': '5.management/2.account.md'
+      - 'Account': '5.management/2.account'
       - 'Base Image': '5.management/3.base-image.md'
     - 'Coordination':
       - 'Introduction': '6.coordination/1.introduction.md'
